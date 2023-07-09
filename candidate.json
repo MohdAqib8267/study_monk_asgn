@@ -1,0 +1,112 @@
+{
+  "candidates": [
+    {
+      "name": "Aarav Sharma",
+      "location": "Mumbai",
+      "jobRole": "Software Engineer"
+    },
+    {
+      "name": "Aarav Sharma",
+      "location": "Banglore",
+      "jobRole": "Software Engineer"
+    },
+    {
+      "name": "AJ Sharma",
+      "location": "Banglore",
+      "jobRole": "Software Engineer"
+    },
+    {
+      "name": "PJ Sharma",
+      "location": "Banglore",
+      "jobRole": "Software Engineer"
+    },
+    {
+      "name": "Rahul Sharma",
+      "location": "Banglore",
+      "jobRole": "Software Engineer"
+    },
+    {
+      "name": "Sam",
+      "location": "Banglore",
+      "jobRole": "Software Engineer"
+    },
+    {
+      "name": "Digvijya",
+      "location": "Delhi",
+      "jobRole": "Data Analyst"
+    },
+    {
+      "name": "Advait Patel",
+      "location": "Bangalore",
+      "jobRole": "Product Manager"
+    },
+
+
+    {
+      "name": "Aishani Reddy",
+      "location": "Chennai",
+      "jobRole": "Web Developer"
+    },
+    {
+      "name": "Akash Desai",
+      "location": "Hyderabad",
+      "jobRole": "Graphic Designer"
+    },
+    {
+      "name": "Akshara Joshi",
+      "location": "Pune",
+      "jobRole": "Marketing Manager"
+    },
+  
+
+    {
+      "name": "Arjun Banerjee",
+      "location": "Kolkata",
+      "jobRole": "Data Scientist"
+    },
+    {
+      "name": "Ashwini Shah",
+      "location": "Ahmedabad",
+      "jobRole": "Business Analyst"
+    },
+    {
+      "name": "Ayush Singh",
+      "location": "Jaipur",
+      "jobRole": "UI/UX Designer"
+    },
+
+
+    {
+      "name": "Divya Choudhary",
+      "location": "Nagpur",
+      "jobRole": "Software Developer"
+    },
+    {
+      "name": "Dhruv Verma",
+      "location": "Lucknow",
+      "jobRole": "Project Manager"
+    },
+    {
+      "name": "Gauri Patel",
+      "location": "Surat",
+      "jobRole": "Digital Marketer"
+    },
+ 
+
+    {
+      "name": "Ishaan Nair",
+      "location": "Kochi",
+      "jobRole": "Data Engineer"
+    },
+    {
+      "name": "Ishika Kumar",
+      "location": "Coimbatore",
+      "jobRole": "Quality Assurance Analyst"
+    },
+    {
+      "name": "Jhanvi Mehta",
+      "location": "Indore",
+      "jobRole": "Content Writer"
+    }
+  ]
+}

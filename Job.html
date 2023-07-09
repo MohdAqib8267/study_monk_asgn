@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Job Portal </title>
+    <link rel="stylesheet" href="Auth.css">
+    <link rel="stylesheet" href="job.css">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="n-wrapper">
+        <div class="n-left">
+            <div class="n-name">Job Portal</div>
+        </div>
+        <div class="n-right">
+            <div class="n-list">
+                <ul>
+                    <li>
+                      <a href="/index.html" style="text-decoration: none;">Home</a>
+                    </li>
+                    <li>
+                      <a href="/Job.html" style="text-decoration: none;">Job Search</a>
+                    </li>
+                    
+                      <!-- <Link spy={true} to='Testimonials' smooth={true} activeClass="activeClass">Contact Us</Link> -->
+                      <a href="/index.html" style="text-decoration: none;">Contact Us</a>
+                    </li>
+                  </ul>
+            </div>
+
+            <Link spy={true} to='Contact' smooth={true} activeClass='activeClass'>
+            <a href="Auth.html">
+                <button class="button n-button">Login/Signup</button>
+            </a>
+            </Link>
+        </div>
+    </div>
+
+    
+
+    
+    <div class="container">
+
+        <div class="forms">
+            <div class="form-content">
+                <div class="login-form">
+                    <div class="title">Job Search</div>
+                    <form action="#">
+                        <div class="input-boxes">
+                            <div class="input-box">
+                                <i class="fa fa-map-marker"></i>
+                                <input type="text" placeholder="Enter Location" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fa fa-toolbox"></i>
+
+                                <input type="text" placeholder="Enter Job Role" required>
+                            </div>
+
+                            <div class="button input-box">
+                                <input type="submit" value="Submit">
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-form">
+                    <div class="title">Search....</div>
+                    <div class="candidate_list">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script >
+   
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector('.login-form form');
+        const submitInput = document.querySelector('.button.input-box input[type="submit"]');
+        const locationInput = document.querySelector('.input-boxes .input-box:nth-child(1) input');
+        const jobRoleInput = document.querySelector('.input-boxes .input-box:nth-child(2) input');
+        const list = document.querySelector('.candidate_list');
+        // submitInput.addEventListener('click', function () {
+        //     const location = locationInput.value.trim().toLowerCase();
+        //     const jobRole = jobRoleInput.value.trim().toLowerCase();
+        //     fetch("/candidate.json").
+        //     then(response=>response.json())
+        //     .then(data=>{
+        //         console.log(data);
+              
+        //         console.log(location);
+        //         console.log(jobRole);
+        //     })
+        // });
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            const location = locationInput.value.trim().toLowerCase();
+            const jobRole = jobRoleInput.value.trim().toLowerCase();
+
+            // Clear the previous candidate list
+            list.innerHTML = '<div class="title">Candidate List</div>';
+
+            // Fetch candidate data from the JSON file
+            fetch("/candidate.json")
+                .then(response => response.json())
+                .then(data => {
+                    // console.log(location);
+                    // console.log(jobRole);
+                    console.log(data);
+                    const candidates = data.candidates;
+                    // console.log(candidates);
+
+                    // Filter candidates based on location and job role
+                    const filteredCandidates = candidates.filter(candidate =>
+                        candidate.location.toLowerCase()==location &&
+                        candidate.jobRole.toLowerCase()==jobRole
+                        // candidate.location.toLowerCase().includes(location) &&
+                        // candidate.jobRole.toLowerCase().includes(jobRole)
+                        // console.log(candidate.location.toLowerCase())
+                    );
+                    // console.log(filteredCandidates);
+
+                    // Display the filtered candidates
+                    let counter = 1;
+                    filteredCandidates.forEach(candidate => {
+                        const candidateInfo = document.createElement('div');
+                        candidateInfo.classList.add('candidate-info');
+                        candidateInfo.textContent = `${counter}. ${candidate.name} - ${candidate.jobRole}`;
+                        list.appendChild(candidateInfo);
+                        counter++;
+                    });
+
+                    // If no candidates match the search criteria
+                    if (filteredCandidates.length === 0) {
+                        const noResultsInfo = document.createElement('div');
+                        noResultsInfo.textContent = 'No candidates found.';
+                        list.appendChild(noResultsInfo);
+                    }
+                })
+                .catch(error => {
+                    console.log("An error occurred while fetching the candidate data:", error);
+                });
+        });
+    });
+
+</script>
+
+</body>

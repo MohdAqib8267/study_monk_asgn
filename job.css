@@ -1,0 +1,104 @@
+
+body{
+    background-image: url("Images/jobsearch.jpg");
+        background-size: cover;
+        background-position: center;
+    
+
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 10px;
+}
+
+
+.n-wrapper{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: aliceblue;
+
+
+    display: flex;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  
+  ul{
+    list-style: none;
+  }
+  .n-left{
+    flex: 1;
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .n-name{
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  
+  .n-right{
+    display: flex;
+    flex: 1.5;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+  
+  }
+  .n-list{
+    flex: 7;
+    display: flex;
+    justify-content: right;
+  }
+  .n-list ul{
+    display: flex;
+    gap: 2rem;
+    margin-right: 4rem;
+  }
+  
+  .n-list ul li:hover{
+    cursor: pointer;
+    color: orange;
+  
+  }
+  
+  .n-button{
+    flex: 2;
+    border-radius: 10px;
+    background: purple;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+  }
+  @media screen and (max-width: 480px) {
+    /* .n-list{
+        display: none;
+    }
+    .n-button{
+        display: none;
+    } */
+
+    .n-list ul{
+        margin-right: 1rem;
+      }
+      .n-right{
+        transform: scale(0.7);
+      }
+  }
+
+.candidate_list{
+    height: 45vh;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+/* .candidate-info{
+    padding: 7px;
+    background: aliceblue;
+    border: 2px solid rebeccapurple;
+    border-radius: 20px;
+} */
